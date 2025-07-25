@@ -34,8 +34,7 @@ public class Club {
 	private String tradeName;
 	
 	@OneToOne
-	@JoinColumn(name = "countries")
-	@Column(name = "country_id")
+	@JoinColumn(name = "country_id")
 	private Country country;
 	
 	@Column(name = "logo_image_url")
@@ -48,8 +47,7 @@ public class Club {
 	private int squadSize;
 	
 	@OneToOne
-	@JoinColumn(name = "stadiums")
-	@Column(name = "stadium_id")
+	@JoinColumn(name = "stadium_id")
 	private Stadium stadium;
 
 	private String manager;
