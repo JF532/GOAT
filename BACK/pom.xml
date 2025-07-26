@@ -110,9 +110,9 @@
             <artifactId>flyway-maven-plugin</artifactId>
             <configuration>
                 <!-- Substitua com os dados do seu banco de dados -->
-                <url>${env.DB_URL}</url>
-                <user>${env.DB_USER}</user>
-                <password>${env.DB_PASSWORD}</password>
+                <url>${DB_URL}</url>
+                <user>${DB_USER}</user>
+                <password>${DB_PASSWORD}</password>
                 <cleanDisabled>false</cleanDisabled>
             </configuration>
         </plugin>
