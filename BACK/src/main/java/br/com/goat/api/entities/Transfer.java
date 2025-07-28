@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "tranfers")
+@Table(name = "transfers")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -24,11 +24,11 @@ public class Transfer {
     @JoinColumn(name = "player_id")
     private Player player;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "origin_club_id")
     private Club originClub;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "destiny_club_id")
     private Club destinyClub;
 

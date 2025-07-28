@@ -1,8 +1,8 @@
 package br.com.goat.api.DTOs;
 
 public record ClubLeagueCreateDTO(
-    String temporada,
-    Long clubeId,
+    String season,
+    Long clubId,
     Long leagueId
 ) {
 } 
