@@ -30,8 +30,8 @@ public class ClubLeagueService {
     LeagueRepository leagueRepository;
 	
 	public ClubLeagueResponseDTO store(ClubLeagueCreateDTO clubLeagueCreateDTO) {
-        Club club = clubRepository.findById(clubLeagueCreateDTO.clubeId()).orElseThrow(()-> new RuntimeException("Club with id:  "+ clubLeagueCreateDTO.clubeId() +" not found"));
-        League league = leagueRepository.findById(clubLeagueCreateDTO.clubeId()).orElseThrow(()-> new RuntimeException("League with id:  "+ clubLeagueCreateDTO.clubeId() +" not found"));
+        Club club = clubRepository.findById(clubLeagueCreateDTO.clubId()).orElseThrow(()-> new RuntimeException("Club with id:  "+ clubLeagueCreateDTO.clubId() +" not found"));
+        League league = leagueRepository.findById(clubLeagueCreateDTO.clubId()).orElseThrow(()-> new RuntimeException("League with id:  "+ clubLeagueCreateDTO.clubId() +" not found"));
 
 		ClubLeague clubLeague = ClubLeagueMapper.toEntity(clubLeagueCreateDTO,club,league);
 		clubLeagueRepository.save(clubLeague);
@@ -49,11 +49,11 @@ public class ClubLeagueService {
 	}
 	
 	public ClubLeagueResponseDTO update(ClubLeagueUpdateDTO clubLeagueUpdateDTO) {
-        Club club = clubRepository.findById(clubLeagueUpdateDTO.clubeId()).orElseThrow(()-> new RuntimeException("Club not found for update"));
-        League league = leagueRepository.findById(clubLeagueUpdateDTO.clubeId()).orElseThrow(()-> new RuntimeException("League not found for update"));
+        Club club = clubRepository.findById(clubLeagueUpdateDTO.clubId()).orElseThrow(()-> new RuntimeException("Club not found for update"));
+        League league = leagueRepository.findById(clubLeagueUpdateDTO.clubId()).orElseThrow(()-> new RuntimeException("League not found for update"));
 		ClubLeague clubLeague = clubLeagueRepository.findById(clubLeagueUpdateDTO.id()).orElseThrow(()->new RuntimeException("ClubLeague not found for update"));
-        clubLeague.setTemporada(clubLeagueUpdateDTO.temporada());
-        clubLeague.setClube(club);
+        clubLeague.setSeason(clubLeagueUpdateDTO.season());
+        clubLeague.setClub(club);
         clubLeague.setLeague(league);
 		return ClubLeagueMapper.toDTO(clubLeagueRepository.save(clubLeague));
 	}

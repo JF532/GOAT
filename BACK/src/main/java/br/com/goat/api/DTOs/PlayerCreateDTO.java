@@ -5,12 +5,15 @@ import java.time.LocalDate;
 
 public record PlayerCreateDTO(
         String name,
-        String social_name,
+        String socialName,
         LocalDate dateBirth,
         int age,
         String preferredFoot,
         String height,
         Double marketValue,
-        String photoUrl
+        String photoUrl,
+        Long countryId,
+        Long positionId,
+        Long clubId
         ) {
 }

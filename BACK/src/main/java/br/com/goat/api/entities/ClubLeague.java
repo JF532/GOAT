@@ -26,11 +26,11 @@ public class ClubLeague {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String temporada;
+    private String season;
 
     @ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "clube_id")
-    private Club clube; 
+    private Club club; 
     
     @ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "league_id")
