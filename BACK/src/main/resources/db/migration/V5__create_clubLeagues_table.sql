@@ -4,6 +4,5 @@ CREATE TABLE clubLeagues(
     club_id BIGINT,
     league_id BIGINT,
     CONSTRAINT fk_clubLeagues_club FOREIGN KEY(club_id) REFERENCES clubs(id),
-    CONSTRAINT fk_clubLeagues_league FOREIGN KEY(league_id) REFERENCES leagues(id),
-
+    CONSTRAINT fk_clubLeagues_league FOREIGN KEY(league_id) REFERENCES leagues(id)
 );
