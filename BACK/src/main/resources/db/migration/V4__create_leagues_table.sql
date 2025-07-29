@@ -5,5 +5,5 @@ CREATE TABLE leagues(
     logo_url VARCHAR(250),
     division VARCHAR(250),
     club_id BIGINT,
-    CONSTRAINT fk_league_club FOREIGN KEY(club_id) REFERENCES clubs(id),
+    CONSTRAINT fk_league_club FOREIGN KEY(club_id) REFERENCES clubs(id)
 );
